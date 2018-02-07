@@ -25,7 +25,18 @@ public class WebScraper {
     }
 
     public static void main(String [] unused) {
-        
+        int count = 0;
+        String s = urlToString("http://erdani.com/tdpl/hamlet.txt");
+        System.out.println(s);
+        String[] array = s.split(" ");
+
+        for (int i = 0; i < array.length; i++) {
+            String a = array[i].toLowerCase();
+            if ((a.contains("prince") || (a.contains("prince,")))) {
+                count++;
+            }
+        }
+        System.out.println("Count of Prince: "+count);
     }
 
 }
